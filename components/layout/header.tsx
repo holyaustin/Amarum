@@ -4,11 +4,11 @@ import classNames from 'clsx'
 import Image from 'next/image'
 
 import { siteConfig } from '@/config/site'
-import BranchButtonLoginOrAccount from '@/integrations/siwe/components/branch-button-login-or-account'
 import useScroll from '@/lib/hooks/use-scroll'
 
 import { NavigationMenuGeneral } from './navigation-menu-general'
 import { UserDropdown } from './user-dropdown'
+import BranchButtonLoginOrAccount from '../../integrations/siwe/components/branch-button-login-or-account'
 import { BranchColorMode } from '../shared/branch-color-mode'
 import { LinkComponent } from '../shared/link-component'
 import { ResponsiveMobileAndDesktop } from '../shared/responsive-mobile-and-desktop'

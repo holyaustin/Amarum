@@ -14,7 +14,7 @@ export default function PageDashboardTransactions() {
         <BranchIsAuthenticated>
           <></>
           <div className="flex items-center gap-x-5 text-center">
-            <span className="text-sm text-gray-600 dark:text-gray-100">Authenticate to access admin area</span>
+            <span className="text-sm text-gray-600 dark:text-gray-100">Authenticate to access admin area.</span>
             <ButtonSIWELogin className="btn btn-emerald btn-sm" />
           </div>
         </BranchIsAuthenticated>

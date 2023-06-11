@@ -1,4 +1,5 @@
 import { SiweMessage } from 'siwe'
+import type { Address } from 'wagmi'
 import { SignMessageArgs } from 'wagmi/dist/actions'
 
 import { siteConfig } from '@/config/site'
@@ -6,7 +7,7 @@ import { siteConfig } from '@/config/site'
 interface SiweMessageOptions {
   address: string
   chainId: number
-  signMessageAsync: (args?: SignMessageArgs | undefined) => Promise<`0x${string}`>
+  signMessageAsync: (args?: SignMessageArgs | undefined) => Promise<Address>
 }
 
 /**
@@ -14,7 +15,7 @@ interface SiweMessageOptions {
  * @param address - Ethereum address
  * @param chainId - Ethereum chain ID
  * @param signMessageAsync - Wallet sign message function
- * @returns SIWE message and signature
+ * @returns SIWE message, message to sign and signature
  */
 export const siweMessage = async ({ address, chainId, signMessageAsync }: SiweMessageOptions) => {
   // 1. Get random nonce from API
@@ -32,13 +33,17 @@ export const siweMessage = async ({ address, chainId, signMessageAsync }: SiweMe
     nonce: nonce,
   })
 
-  // 3. Sign message
+  // 3. Prepare the message to sign
+  const messageToSign = message.prepareMessage()
+
+  // 4. Sign message
   const signature = await signMessageAsync({
     message: message.prepareMessage(),
   })
 
   return {
     message,
+    messageToSign,
     signature,
   }
 }

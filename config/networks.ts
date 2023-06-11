@@ -1,11 +1,27 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Networks
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-import { arbitrum, arbitrumGoerli, baseGoerli, goerli, hardhat, mainnet, optimism, optimismGoerli, polygon, sepolia } from '@wagmi/chains'
+import {
+  arbitrum,
+  arbitrumGoerli,
+  baseGoerli,
+  celo,
+  celoAlfajores,
+  goerli,
+  hardhat,
+  mainnet,
+  optimism,
+  optimismGoerli,
+  polygon,
+  polygonMumbai,
+  sepolia,
+} from '@wagmi/chains'
 import { configureChains } from 'wagmi'
 import { alchemyProvider } from 'wagmi/providers/alchemy'
 import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
+
+import { env } from '@/env.mjs'
 
 // @ts-ignore
 goerli.iconUrl = '/icons/NetworkEthereumTest.svg'
@@ -15,47 +31,44 @@ sepolia.iconUrl = '/icons/NetworkEthereumTest.svg'
 arbitrumGoerli.iconUrl = '/icons/NetworkArbitrumTest.svg'
 // @ts-ignore
 baseGoerli.iconUrl = '/icons/NetworkBaseTest.svg'
+// @ts-ignore
+celo.iconUrl = '/icons/NetworkCelo.svg'
+// @ts-ignore
+celoAlfajores.iconUrl = '/icons/NetworkCeloTest.svg'
 
-const CHAINS_SUPPORTED_BY_ALCHEMY = [mainnet, goerli, sepolia] // TODO add other chains supported by Alchemy
-const CHAINS_SUPPORTED_BY_INFURA = [mainnet, goerli, sepolia] // TODO add other chains supported by Infura
-const CHAINS_SUPPORTED_BY_PUBLIC_PROVIER = [arbitrum, arbitrumGoerli, baseGoerli, goerli, mainnet, optimism, optimismGoerli, polygon, sepolia]
-const CHAINS_SUPPORTED_BY_HARDHAT = [hardhat]
+export const ETH_CHAINS_TEST = [goerli, sepolia, polygonMumbai, celoAlfajores, hardhat]
+export const ETH_CHAINS_L2_TEST = [baseGoerli, optimismGoerli, arbitrumGoerli]
+export const ETH_CHAINS_PROD = [mainnet, optimism, arbitrum, polygon, celo, goerli, baseGoerli]
+export const ETH_CHAINS_DEV =
+  env.NEXT_PUBLIC_PROD_NETWORKS_DEV === 'true'
+    ? [...ETH_CHAINS_PROD, ...ETH_CHAINS_TEST, ...ETH_CHAINS_L2_TEST]
+    : [...ETH_CHAINS_TEST, ...ETH_CHAINS_L2_TEST]
+
+export const CHAINS = process.env.NODE_ENV === 'production' ? ETH_CHAINS_PROD : ETH_CHAINS_DEV
 
 const PROVIDERS = []
-const CHAINS = []
 
-if (process.env.NEXT_PUBLIC_ALCHEMY_API_KEY) {
-  CHAINS.push(...CHAINS_SUPPORTED_BY_ALCHEMY)
+if (env.NEXT_PUBLIC_ALCHEMY_API_KEY) {
   PROVIDERS.push(
     alchemyProvider({
-      apiKey: process.env.NEXT_PUBLIC_ALCHEMY_API_KEY as string,
+      apiKey: env.NEXT_PUBLIC_ALCHEMY_API_KEY as string,
     })
   )
 }
 
-if (process.env.NEXT_PUBLIC_INFURA_API_KEY) {
-  CHAINS.push(...CHAINS_SUPPORTED_BY_INFURA)
+if (env.NEXT_PUBLIC_INFURA_API_KEY) {
   PROVIDERS.push(
     infuraProvider({
-      apiKey: process.env.NEXT_PUBLIC_INFURA_API_KEY as string,
+      apiKey: env.NEXT_PUBLIC_INFURA_API_KEY as string,
     })
   )
 }
 
-if (process.env.NEXT_PUBLIC_USE_HARDHAT_PROVIDER) {
-  CHAINS.push(...CHAINS_SUPPORTED_BY_HARDHAT)
+// Fallback to public provider
+// Only include public provider if no other providers are available.
+if (PROVIDERS.length === 0 || env.NEXT_PUBLIC_USE_PUBLIC_PROVIDER === 'true') {
   PROVIDERS.push(publicProvider())
 }
-
-// Include public provider if no other providers are available.
-if (process.env.NEXT_PUBLIC_USE_PUBLIC_PROVIDER || PROVIDERS.length === 0) {
-  CHAINS.push(...CHAINS_SUPPORTED_BY_PUBLIC_PROVIER)
-  PROVIDERS.push(publicProvider())
-}
-
-// deduplicate chains
-const UNIQUE_CHAINS = [...new Set(CHAINS)]
 
 // @ts-ignore
-// TODO: The sepolia chain is throwing type errors for some reason.
-export const { chains, provider } = configureChains(UNIQUE_CHAINS, [...PROVIDERS])
+export const { chains, publicClient, webSocketPublicClient } = configureChains(CHAINS, [...PROVIDERS])
