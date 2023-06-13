@@ -1,127 +1,85 @@
-![image](https://user-images.githubusercontent.com/3408362/230732083-1c98e451-08af-41c2-b522-126370e8c6a5.png)
+# Amarum : A Paywall Video Dataset Marketplace  with a DAO
 
-# ⚡ TurboETH - Web3 App Starter Kit
-Web3 App Template built using Next.js, RainbowKit, SIWE, Disco, and more!
+A DApp to allow the user(host) to mint moments as NFT using the contracts deployed on FVM
 
-### Starter Kit Examples
-- [Main](https://light.turboeth.xyz) - `main` branch
-- [Integrations](https://turboeth.xyz) - `integrations` branch
+![Amarum](https://bafkreibsvdrhg4xrmdeujrz33smda7rziayuzpxb5cggcp4o5633sn4c2a.ipfs.nftstorage.link/)
 
-Deploy TurboETH `main` directly to [Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app&project-name=TurboETH&repository-name=turbo-eth&demo-title=TurboETH&env=APP_ADMINS,NEXT_PUBLIC_ALCHEMY_API_KEY,NEXTAUTH_SECRET,ETHERSCAN_API_KEY,ETHERSCAN_API_KEY_OPTIMISM,ETHERSCAN_API_KEY_ARBITRUM,ETHERSCAN_API_KEY_POLYGON,DATABASE_URL&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app%2Fblob%2Fmain%2F.env.example)
+## Introduction
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app&project-name=TurboETH&repository-name=turbo-eth&demo-title=TurboETH&env=NEXTAUTH_SECRET,DATABASE_URL&envDescription=How%20to%20get%20these%20env%20variables%3A&envLink=https%3A%2F%2Fgithub.com%2Fturbo-eth%2Ftemplate-web3-app%2Fblob%2Fmain%2F.env.example)
+Amarum is a web3 video project with the aim of helping creators publish exciting video datasets and share them easily while getting paid for that. The datasets upon submission is curated and stored on the filecoin SPs through data deals that are renewal by the DAO admin. The DAO has the responsibility of storing these datasets and making money from the paywall. The accrued income is distributed both to DAO members and some kept in the DAO treasury. DAO members can use the Huddle01 video streaming feature to have meetings and record presentation and mint them while storing the Video files on IPFS and Metadata on Filecoin Blockchain.
+Contents can also be streamed live through Huddle01 Live Presentation SDK streams. We use the open zeppelin ERC721 standard, Files are store to IPFS / Filecoin using NFT.Storage and  file metadata URI stored on Filecoin Hyperspace Testnet which is FEVM . Upon retrieval, . Lighthouse was used to used for encryption and most important, the Access control of Light hoise was used to grant access to member with the membership NFT, Huddle for conference meeting and XMTP for chat and interaction.
 
-### [Documentation](https://docs.turboeth.xyz)
-- Getting Started
-  - [Environment Variables](https://docs.turboeth.xyz/getting-started/environment)
-  - [JSON-RPC](https://docs.turboeth.xyz/getting-started/json-rpc)
-  - [WAGMI CLI](https://docs.turboeth.xyz/getting-started/wagmi-cli)
-  - [UI Components](https://docs.turboeth.xyz/getting-started/design-system)
-  - [Backend Database](https://docs.turboeth.xyz/getting-started/database)
- - Core Integrations
-   - [🌈 RainbowKit](https://docs.turboeth.xyz/integration/rainbowkit)
-   - [🔏 Sign-In With Ethereum](https://docs.turboeth.xyz/integration/sign-in-with-ethereum)
-- Smart Contract Integrations
-  - [ERC20](https://docs.turboeth.xyz/integration/smart-contract-erc20)
-- API Integrations
-  - [Disco](https://docs.turboeth.xyz/integration/disco)
-  - [Etherscan](https://docs.turboeth.xyz/integration/etherscan)
+## Web 3.0 technologies Used
 
-# Getting Started
+Frontend: NextJS, postcss, tailwindcss, Theme
 
-The `pnpm` CLI is the recommended package manager but `npm` and `yarn` should work too.
+Web3 technologies: LightHouse, Huddle01,  IPFS/filecoin, Livepeer (livepeer.js), Web3Modal,  Filecoin (Hyperspace),
+Backend: Solidity, Node.js
 
-```bash
-pnpm install
+Blockchain deployed to:  Filecoin (Calibration) Testnet
+
+## Description
+
+This project was made using several technologies. The front-end was designed using a server-side-rendering javascript tech known as NextJS. the latest version of Next was used because of how fast it was to build the project.  IPFS / Filecoin's NFT.Storage was used to store user's video on their decentralized storage. videos of various news can be viewed on demand. They can share these Videos to anyone through a sharing mechansism that is easy to copy out the sharing IPFS URL. Huddle01 for video streaming ND CONFERENCE MEETING. Huddle01 was used for conference meeting.
+
+The smart contract uses ERC-721 specification to hold metadata URI, ethers.js was used to interact with the smart contract. The contract was deployed to Filecoin Hyperspace blockchain. The entire project demo was hosted to Vercel.
+
+## Live DApp hosted on
+
+Live Dapp on Vercel: - <https://mominter.vercel.app/>
+
+  Filecoin (calibration) Testnet deployed Address = "0x4e75D8F85ED40aA3f73fB751b1Dfa07DEFe09C94"
+
+  <https://calibration.filfox.info/en/address/0x4e75D8F85ED40aA3f73fB751b1Dfa07DEFe09C94>
+
+ Youtube video link: <https://youtu.be/kZvxCGMPci8>
+
+## Getting Started
+
+First, run the development server:
+
+```text
+clone the repo https://github.com/holyaustin/Mominter.git
+# next is to 
+npm install
+# then
+npm run dev
+# or
+yarn dev
 ```
 
-#### Development
-```bash
-pnpm dev
-```
+Open [http://localhost:3016](http://localhost:3016) with your browser to see the result.
 
-#### Build
-```bash
-pnpm build
-```
+## How to run this project locally
 
-### Web3 Core
-- [WAGMI CLI](https://wagmi.sh/cli/getting-started) - Automatic React Hook Generation
-- [RainbowKit](https://www.rainbowkit.com/) - Wallet connection manager
-- [Sign-In With Ethereum](https://login.xyz/) - Account authentication
+Try running some of the following tasks:
 
-### Web2 Frameworks
-- [Vercel](https://vercel.com/) - App Infrastructure
-- [Prisma](https://www.prisma.io/) - Database ORM 
+Fork this repo using
 
-### Developer Experience
-- [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
-- [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
-- [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript
+git clone <https://github.com/holyaustin/Mominter.git>
 
-### User Interface
-- [TailwindCSS](https://tailwindcss.com) – Utility-first CSS framework for rapid UI development
-- [Radix](https://www.radix-ui.com/) – Primitives like modal, popover, etc. to build a stellar user experience
-- [Framer Motion](https://www.framer.com/motion/) – Motion library for React to animate components with ease
-- [Lucide](https://lucide.dev/docs/lucide-react) – Beautifully simple, pixel-perfect icons
+cd soldier-ant-colony
 
-The [ui.shadcn.com](https://ui.shadcn.com) components are included in the `/components/shared/ui` folder.
+npx hardhat node
 
-# 💻 Developer Experience
+npx hardhat run scripts/deploy.js --network localhost
 
-### 🐕 What is husky
-Husky improves your git commits.
+npm run build
 
-You can use it to lint your commit messages, run tests, lint code, etc... when you commit or push. Husky supports all Git hooks.
+## How to deploy to Filecoin  blockchain, update hardhat.config
 
-#### 🪝 Hooks
-- pre-commit: lint app codebase
-- commit-msg: apply commintlint
+npx hardhat run scripts/deploy.js --network testnet
 
-### 📋 What is commitlint
+## Connect with me and send me a mail
 
-commitlint checks if your commit messages meet the [conventional commit format](https://conventionalcommits.org).
+E-mail - <holyaustin@yahoo.com>
 
-In general the pattern mostly looks like this:
+stay connected on twitter @holyaustin
 
-```sh
-type(scope?): subject  #scope is optional; multiple scopes are supported (current delimiter options: "/", "\" and ",")
-```
+<https://live-par-1-abr-cdn.livepush.io/live_abr_cdn/emaIqCGoZw-6/index.m3u8>
 
-Real world examples can look like this:
+<https://calibration.filfox.info/en/address/0xa6d6f4556b022c0c7051d62e071c0acece5a1228>
 
-```
-chore: run tests on travis ci
-```
+LightHouse API - 1eceb394-fc75-43cf-83b6-546c9c13da57
 
-```
-fix(server): send cors headers
-```
-
-```
-feat(blog): add comment section
-```
-
-Common types according to [commitlint-config-conventional (based on the Angular convention)](https://github.com/conventional-changelog/commitlint/tree/master/@commitlint/config-conventional#type-enum) can be:
-
-- build
-- chore
-- ci
-- docs
-- feat
-- fix
-- perf
-- refactor
-- revert
-- style
-- test
-
-# Acknowledgements
-
-Original template was forked from https://github.com/wslyvh/nexth
-
-Thank you @wslyvh 🙏
-
-<hr/>
-
-Copyright 2023 [Kames Geraghty](https://twitter.com/KamesGeraghty)
+Huddle01 - eee33ed8308ea7f4814202f6fee8c936c80d2f9f03d480b069f13974fe349e21
