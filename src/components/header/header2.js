@@ -56,7 +56,7 @@ export default function Header() {
           className={state.isSticky ? 'is-sticky' : ''}
         >
           <Container sx={styles.container}>
-          <Image src="/images/mominter_logo.png" loading="lazy" sx={styles.logo} alt="logo" />
+          <Image src="/images/amarumlogo.png" loading="lazy" sx={styles.logo} alt="logo" />
 {/**
           <Navbar2
               isSticky={state.isSticky}

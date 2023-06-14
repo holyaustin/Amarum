@@ -9,32 +9,32 @@ const data = [
   {
     id: 1,
     ques: 'How do i start using this service?',
-    ans: `All you need is a web3 wallet. connect your wallet and start uploading your files and dtreaming videos. you also go live`,
+    ans: `All you need is a web3 wallet. connect your wallet and start uploading your Video files and sreaming videos. you also go live`,
   },
   {
     id: 2,
     ques: 'What type of files do you support?',
-    ans: `We suppolrt all types of media files. Documents, Audiofiles and  Video files of different extensions ].`,
+    ans: `We support all types of Video media files. Video files of different extensions are allowed.`,
   },
   {
     id: 3,
     ques: 'Do you support directory upload?',
-    ans: `We currently support  single file upload and directory upload will be added later.`,
+    ans: `Creators can compress datasets into zip, gzip, rar formats before upload. `,
   },
   {
     id: 4,
     ques: 'Is this service free?',
-    ans: `This service is free for as much storage as you want. Thanks to Protocol lab. IPFS / Filecoin (Web3UI) and Livepeer (Livepeer.js) who are partners of this decentralized service.`,
+    ans: `This service is free to expore. if you want any dtaset, you have to pay to bypass the paywall to download your dataset. `,
   },
 
   {
     id: 5,
     ques: 'Can i ever look for my file?',
-    ans: `Decentralized files cannot be brought down or missing. You files are stored on multiples nodes servers. All this servers are located in diffrent locations all over the globe. Be rest assured that your files cannot just go down`,
+    ans: `Decentralized files cannot be brought down or missing. You files are stored on multiples nodes servers with Filecoin Storage providers (SPs). All this servers are located in diffrent locations all over the globe. Be rest assured that your files cannot just go down.`,
   },
   {
     id: 6,
-    ques: 'Where can i know more about this STREMAGENIC?',
+    ques: 'Where can i know more about this Amarum?',
     ans: `We are putting up a comprehensive "Getting started documentation". mean-while engage our support team on discord and do follow us on Twitter.`,
   },
 ];

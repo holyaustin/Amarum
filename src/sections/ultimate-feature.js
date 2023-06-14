@@ -45,8 +45,8 @@ const data = [
   {
     id: 6,
     icon: '/images/services/6.png',
-    title: 'Users own data',
-    description: `All data stored are entirely owned and managed by users`,
+    title: 'DAO-centric',
+    description: `All data stored are entirely governed by the comminty DAO. The DAO members control the affair of this Dataset Marketplace.`,
   },
 ];
 

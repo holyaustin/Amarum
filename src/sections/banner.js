@@ -16,6 +16,7 @@ import { useState } from 'react';
 import { rgba } from 'polished';
 import Image from '../components/image';
 import ConnectWallet from "../components/ConnectWallet";
+import ConnectWalletDAO from "../components/ConnectWalletDAO";
 
 const Banner = () => {
  
@@ -25,23 +26,25 @@ const Banner = () => {
         <Box sx={styles.grid}>
           <Box as="form" sx={styles.domainCard}>
             <Heading className="text-center text-blue-500"> Amarum</Heading>
-            <div style={{fontSize: '24px', marginRight: '0.5rem', fontWeight: 'bold'}} className="text-justify font-mono">
+            
+            <div style={{fontSize: '18px', marginRight: '0.5rem', fontWeight: 'bold'}} className="text-justify font-mono">
               <p>
-              Decentralized Video Moment Minting and Sharing Platform. Where you can explore video Moments on Demand (VOD) and share them with friends and loved ones. Mint Part of your Video meetings as NFTs. Want to try it Out, Mint this Access NFT!
+              Amarum is a Data DAO video project with the aim of helping creators publish exciting video datasets while getting rewarded for that. The datasets upon submission is curated and stored on filecoin SPs through data deals that are established by the DAO.
               </p>
               <br />
             </div>
-            <div className='flex flex-row w-1/2'>
-          <ConnectWallet /> <ConnectWallet />
+            <div className="flex justify-center gap-4">
+            <div className="mr-5"><ConnectWallet /></div>
+            <div> <ConnectWalletDAO /></div>
           </div>
-       {/**
-            <Text as="p" sx={styles.note} style={{color:`red`, fontSize: '15px', marginRight: '0.5rem', fontWeight: 'bold'}}>
-            Connect your wallet to get started watching your favourite videos..
+       
+            <Text as="p" sx={styles.note} style={{color:`red`, fontSize: '18px', marginRight: '0.5rem', fontWeight: 'bold'}}>
+            Home for video datasets...
             </Text>
-             */}
+           
           </Box>
           <Box as="figure" sx={styles.illustration}>
-            <Image src="/images/b1.jpg" loading="lazy" alt="video conferencing" />
+            <Image src="/images/live4.png" loading="lazy" alt="video conferencing" />
           </Box>
         </Box>
       </Container>

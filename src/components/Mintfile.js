@@ -14,8 +14,8 @@ import { Wallet, providers } from "ethers";
 import 'dotenv/config';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
-// const APIKEY = [process.env.NFT_STORAGE_API_KEY];
-const APIKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDA4Zjc4ODAwMkUzZDAwNEIxMDI3NTFGMUQ0OTJlNmI1NjNFODE3NmMiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1MzA1NjE4NzM4MCwibmFtZSI6InBlbnNpb25maSJ9.agI-2V-FeK_eVRAZ-T6KGGfE9ltWrTUQ7brFzzYVwdM";
+const APIKEY = [process.env.NEXT_PUBLIC_NFT_STORAGE_API_KEY];
+// const APIKEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDA4Zjc4ODAwMkUzZDAwNEIxMDI3NTFGMUQ0OTJlNmI1NjNFODE3NmMiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY4NjczNzA2MjYwOSwibmFtZSI6ImFtYXJ1bSJ9.RKDL3AyBEkRWx3pZuR5TVqsigtFzfTMefXY6bsYgetA";
 
 const MintFile = () => {
   const navigate = useRouter();
@@ -168,7 +168,7 @@ const MintFile = () => {
           </div>
 
           <button type="button" onClick={(e) => mintNFTFile(e, uploadedFile)} className="font-bold mt-20 bg-yellow-500 text-white text-2xl rounded p-4 shadow-lg">
-            Publish Moment
+            Publish Video
           </button>
         </div>
       </div>

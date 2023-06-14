@@ -13,8 +13,8 @@ export default function IndexPage() {
     <ThemeProvider theme={theme}>
       <Layout>
         <SEO
-          title="Decentralized Video storage and Momnet sharing platform"
-          description="Storage of video files and media documents using web3 decentralized technology for on demand access with sharing made easy with web3!"
+          title=" A Paywall Video Dataset Marketplace  with a DAO"
+          description="Amarum is a web3 video project with the aim of helping creators publish exciting video datasets and share them easily while getting paid for that."
         />
         <Banner />
         <Services />

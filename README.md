@@ -2,11 +2,11 @@
 
 A DApp to allow the user(host) to mint moments as NFT using the contracts deployed on FVM
 
-![Amarum](https://bafkreibsvdrhg4xrmdeujrz33smda7rziayuzpxb5cggcp4o5633sn4c2a.ipfs.nftstorage.link/)
+![Amarum](https://bafkreihqvhqlk4j5ea4hky3fmk24cj6xhw2rhgbkfcbg6fktlkprbec7gm.ipfs.nftstorage.link/)
 
 ## Introduction
 
-Amarum is a web3 video project with the aim of helping creators publish exciting video datasets and share them easily while getting paid for that. The datasets upon submission is curated and stored on the filecoin SPs through data deals that are renewal by the DAO admin. The DAO has the responsibility of storing these datasets and making money from the marketplace paywall. The accrued income is distributed both to DAO members and some kept in the DAO treasury. DAO members can use the Huddle01 video streaming feature to have meetings and record presentation and mint them while storing the Video files on IPFS and Metadata on Filecoin Blockchain.
+Amarum is a Data DAO video project with the aim of helping creators publish exciting video datasets while getting rewarded for that. The datasets upon submission is curated and stored on filecoin SPs through data deals that are established by the DAO. The DAO has the responsibility of storing these datasets and making money from the marketplace paywall. The accrued income is distributed both to DAO members and some kept in the DAO treasury. DAO members can use the Huddle01 video streaming feature to have meetings and record presentation and mint them while storing the Video files on IPFS and Metadata on Filecoin Blockchain.
 Contents can also be streamed live through Huddle01 Live Presentation SDK streams. We use the open zeppelin ERC721 standard, Files are store to IPFS / Filecoin using NFT.Storage and  file metadata URI stored on Filecoin Hyperspace Testnet which is FEVM . Upon retrieval, . Lighthouse was used to used for encryption and most important, the Access control of Light hoise was used to grant access to member with the membership NFT, Huddle for conference meeting and XMTP for chat and interaction.
 
 ## Web 3.0 technologies Used

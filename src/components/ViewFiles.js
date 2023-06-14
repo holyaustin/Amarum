@@ -14,7 +14,7 @@ import { rgba } from 'polished';
 import Popup from 'reactjs-popup';
 //import 'reactjs-popup/dist/index.css';
 
-import blenderPoster from '../../public/images/mominter_logo.png';
+import blenderPoster from '../../public/images/amarumnew.png';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
 
@@ -34,7 +34,7 @@ export default function ViewFiles() {
     return ipfsGateWayURL;
   };
   
-  const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
+  const rpcUrl = "https://filecoin-calibration.chainstacklabs.com/rpc/v1";
    // const rpcUrl = "localhost";
 
   async function loadfileNFT() {

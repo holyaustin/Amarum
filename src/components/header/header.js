@@ -51,7 +51,7 @@ export default function Header() {
           className={state.isSticky ? 'is-sticky' : ''}
         >
           <Container sx={styles.container}>
-          <Image src="/images/mominter.png" loading="lazy" sx={styles.logo} alt="logo" />
+          <Image src="/images/amarumnew.png" loading="lazy" sx={styles.logo} alt="logo" />
             {/** <Logo sx={styles.logo} isSticky={state.isSticky} /> */}
 
             <Navbar
@@ -59,7 +59,7 @@ export default function Header() {
               isMobile={state.isMobileMenu}
               handleCloseMenu={handleCloseMenu}
             />
-            <Flex sx={styles.buttonGroup}>
+            <Flex sx={styles.buttonGroup} className="flex justify-center gap-4">
               <ConnectWallet/>
 
               <a href="https://discord.gg" target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
