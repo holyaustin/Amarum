@@ -6,7 +6,7 @@ import Layout from '../../components/layout2';
 import { jsx, Box } from 'theme-ui';
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from '../../../public/images/mominter_logo.png';
+import logo from '../../../public/images/amarumnew.png';
 import styles from '../../styles/Assets.module.css';
 
 interface Session {

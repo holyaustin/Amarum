@@ -20,7 +20,7 @@ import { useHuddleStore } from "@huddle01/huddle01-client/store";
 import PeerVideoAudioElem from "./PeerVideoAudioElem";
 import MeVideoElem from "./MeVideoElem";
 
-import blenderPoster from '../../public/images/mominter_logo.png';
+import blenderPoster from '../../public/images/amarumnew.png';
 import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
 import { fileShareAddress } from "../../config";
 
