@@ -21,8 +21,8 @@ import PeerVideoAudioElem from "./PeerVideoAudioElem";
 import MeVideoElem from "./MeVideoElem";
 
 import blenderPoster from '../../public/images/amarumnew.png';
-import fileNFT from "../../artifacts/contracts/Genic.sol/FileNFT.json";
-import { fileShareAddress } from "../../config";
+import AmarumNFT from "../../artifacts/contracts/Amarum.sol/AmarumNFT.json";
+import { AmarumAddress } from "../../config";
 
 const containerStyle = {
   position: "relative",

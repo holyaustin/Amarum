@@ -10,7 +10,7 @@ module.exports = {
    
     testnet: {
       url: `https://filecoin-calibration.chainstacklabs.com/rpc/v1`, 
-      accounts: [process.env.PRIVATE_KEY],
+      accounts: [process.env.NEXT_PUBLIC_PRIVATE_KEY],
     },
 
   },

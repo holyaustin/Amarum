@@ -1,3 +1,3 @@
 
-  export const fileShareAddress = "0x4e75D8F85ED40aA3f73fB751b1Dfa07DEFe09C94"
+  export const AmarumAddress = "0xc9637cB5e3EbAEE5124Daa92EA4Fee1Bd37B71FD"
   
