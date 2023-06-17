@@ -16,8 +16,9 @@ import Popup from 'reactjs-popup';
 //import 'reactjs-popup/dist/index.css';
 
 //import blenderPoster from '../../public/images/logo.png';
-import fileNFT from "../../artifacts/contracts/Artifacts.sol/Artifacts.json";
-import { ArtifactsAddress } from "../../config";
+import AmarumNFT from "../../artifacts/contracts/Amarum.sol/AmarumNFT.json";
+import { AmarumAddress } from "../../config";
+console.log("AmarumAddress is :", AmarumAddress)
 
 const containerStyle = {
   position: "relative",
@@ -83,7 +84,7 @@ export default function Watching() {
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
-    const contract = new ethers.Contract(ArtifactsAddress, fileNFT.abi, signer);
+    const contract = new ethers.Contract(AmarumAddress, AmarumNFT.abi, signer);
     const data = await contract.fetchOneArtifact(pid);
     const data2 = await contract.fetchItemViews(pid);
 
@@ -143,7 +144,7 @@ export default function Watching() {
       const web3Modal = new Web3Modal();
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
-      const connectedContract = new ethers.Contract(ArtifactsAddress, fileNFT.abi, provider.getSigner());
+      const connectedContract = new ethers.Contract(AmarumAddress, AmarumNFT.abi, provider.getSigner());
       console.log("Count variable is ", pid);
 
       const mintNFTTx = await connectedContract.createViewItem(pid);

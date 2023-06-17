@@ -16,8 +16,6 @@ contract AmarumNFT is ERC721URIStorage {
 
     address payable owner;
     address public admin;
-    uint public currentEpoch;
-    uint public epochStage; 
     uint public totalVotes;
 
     mapping(uint256 => AmarumItem) private idToAmarumItem;
@@ -27,6 +25,7 @@ contract AmarumNFT is ERC721URIStorage {
       uint256 tokenId;
       address payable author;
       address payable owner;
+      uint256 price;
       uint256 dateCreated;
       bool approved;
     }
@@ -41,6 +40,7 @@ contract AmarumNFT is ERC721URIStorage {
       uint256 indexed tokenId,
       address author,
       address owner,
+      uint256 price,
       uint256 dateCreated,
       bool approved
     );
@@ -68,6 +68,20 @@ contract AmarumNFT is ERC721URIStorage {
       admin = msg.sender;
     }
 
+    /* Updates the Dataset price when admin approves dataset to market place */
+    function updateDatasetPrice(uint256 _tokenId, uint256 _price) public payable {
+      require(owner == msg.sender, "Only marketplace owner/admin can update dataset price.");
+      uint256 Price = _price;
+      idToAmarumItem[_tokenId].price = Price;
+
+    }
+
+    /* Returns the listing price of the contract */
+    function getDatasetPrice(uint256 tokenId) public view returns (uint256) {
+      return idToAmarumItem[tokenId].price;
+      
+    }
+
      /* Publish new work / Amarum */
     function createToken(string memory tokenURI) public payable returns (uint) {
       _tokenIds.increment();
@@ -88,6 +102,7 @@ contract AmarumNFT is ERC721URIStorage {
         tokenId,
         payable(msg.sender),
         payable(address(this)),
+        0,
         block.timestamp,
         false
       );
@@ -97,6 +112,7 @@ contract AmarumNFT is ERC721URIStorage {
         tokenId,
         msg.sender,
         address(this),
+        0,
         block.timestamp,
         false
       );
