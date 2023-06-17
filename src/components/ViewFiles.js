@@ -121,7 +121,7 @@ export default function ViewFiles() {
   return (
     <Box as="section"  sx={styles.section}>
       <div className="bg-blue-100 text-xl text-center text-black font-bold pt-5 pb-4">
-        <h1> List of Datasets submitted</h1>
+        <h1> Datasets Marketplace</h1>
       </div>
     <div className="flex justify-center bg-blue-100 mb-12">
 
@@ -153,7 +153,7 @@ export default function ViewFiles() {
               </div>
 
               <div className="p-2 bg-black">
-                <button type="button" className="mt-1 w-full bg-blue-500 text-white font-bold py-2 px-12 rounded" onClick={() => ArticleDetails(nft)}>Review Article</button>
+                <button type="button" className="mt-1 w-full bg-blue-500 text-white font-bold py-2 px-12 rounded" onClick={() => ArticleDetails(nft)}>Buy Dataset</button>
               </div>
           
             </div>

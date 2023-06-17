@@ -2,7 +2,7 @@ const hre = require("hardhat");
 const fs = require('fs');
 
 async function main() {
-  const FileNFT = await hre.ethers.getContractFactory("VideoDataSet");
+  const FileNFT = await hre.ethers.getContractFactory("AmarumNFT");
   const fileShare = await FileNFT.deploy();
   await fileShare.deployed();
   console.log("Amarum Contract deployed to:", fileShare.address);

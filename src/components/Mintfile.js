@@ -18,7 +18,6 @@ import 'dotenv/config';
 import AmarumNFT from "../../artifacts/contracts/Amarum.sol/AmarumNFT.json";
 import { AmarumAddress } from "../../config";
 const APIKEY = [process.env.NEXT_PUBLIC_NFT_STORAGE_API_KEY];
-console.log("NFT.storage key is :", APIKEY);
 
 const MintFile = () => {
   const navigate = useRouter();
@@ -213,7 +212,7 @@ const MintFile = () => {
           </div>
 
           <button type="button" onClick={(e) => mintNFTFile(e, uploadedFile, uploadedFile2)} className="font-bold mt-20 bg-red-700 text-white text-2xl rounded p-4 shadow-lg">
-            Submit Paper
+            Submit Videos
           </button>
         </div>
       </div>

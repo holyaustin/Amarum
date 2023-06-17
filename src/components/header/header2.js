@@ -74,31 +74,15 @@ export default function Header() {
           <a>Home</a>
           </Link>
           <Link href="/explore">
-          <a>Video-On-Demand</a>
+          <a>Marketplace</a>
           </Link>
           <Link href="/publish">
-          <a>Publish-Moment</a>
-          </Link>
-          <Link href="/encrypt">
-          <a> Encrypt-Upload</a>
+          <a>Submit-Dataset</a>
           </Link>
           <Link href="/Videoconference">
-          <a>Video-Conference </a>
+          <a>Video-Meeting </a>
           </Link>
-          <Link href="/videoplayer">
-          <a> Video-Player</a>
-          </Link>
-
-
-          
-{/**
-          <Link href="/addfolder">
-          <a>Video Marketplace</a>
-          </Link>
-          <Link href="/analytics">
-          <a>Analytics</a>
-          </Link>
-  */}         
+      
           </div> 
 
             <Flex sx={styles.buttonGroup}>

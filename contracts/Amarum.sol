@@ -20,32 +20,8 @@ contract AmarumNFT is ERC721URIStorage {
     uint public epochStage; 
     uint public totalVotes;
 
-    mapping(address => Member) public daoMembers;
-    mapping(string => Repo) public AmarumRepos;
-    
     mapping(uint256 => AmarumItem) private idToAmarumItem;
     mapping(uint256 => ViewItem) private idToViewItem;
-
-    struct Repo {
-        string url;
-        string dealId;
-        string pieceCid;
-        address spAddress;
-        uint numberOfVotes;
-        bool stored;
-        bool accepted;
-        uint yesVotes;
-        uint noVotes;
-        bool isValue;
-    }
-
-    struct Member {
-        uint256 memberId;
-        address payable addr;
-        uint availableVotes;
-        uint votingPower;
-        bool isValue;
-    }
 
     struct AmarumItem {
       uint256 tokenId;
@@ -87,12 +63,7 @@ contract AmarumNFT is ERC721URIStorage {
         _;
     }
 
-    modifier isDaoMember() {
-        if(daoMembers[msg.sender].isValue){
-            _;
-        }
-    }
-    constructor() ERC721("Amarum Video-Dataset", "VDS") {
+    constructor() ERC721("Video-Dataset", "VDS") {
       owner = payable(msg.sender);
       admin = msg.sender;
     }
@@ -282,74 +253,5 @@ contract AmarumNFT is ERC721URIStorage {
         (bool success, ) = owner.call{value: value}("");
         require(success, "There was an error!");
     }
-
-// DAO part
- // Admin functions
-   function adminAdvanceEpoch() public onlyAdmin{
-       currentEpoch+=1;
-   }
-
-   function adminAdvanceStage() public onlyAdmin{
-       epochStage+=1;
-   }
-
-    // Stage 0
-    function joinDao() public payable  {
-      _daoIds.increment();
-      uint256 newTokenId = _daoIds.current();
-        //require(epochStage == 0,"Incorrect stage for joinDao, wait for next Epoch");
-        Member memory newMember = Member(
-        newTokenId,
-         payable(msg.sender),
-         1, 
-         1,
-         true
-        );
-        totalVotes+=msg.value;
-        daoMembers[msg.sender] = newMember;
-    }
-
-    // Stage 1
-    function voteForRepo(string memory url) public isDaoMember {
-        require(epochStage == 1,"Incorrect stage for voteForRepo");
-        if(AmarumRepos[url].isValue){
-            AmarumRepos[url].numberOfVotes+= daoMembers[msg.sender].availableVotes;
-            // for now, members cast all their votes in 1 repo
-            daoMembers[msg.sender].availableVotes = 0;
-            if(AmarumRepos[url].numberOfVotes > totalVotes/2){
-                AmarumRepos[url].accepted = true;
-            }
-        } else {
-            Repo memory newRepo = Repo(
-                {
-                    numberOfVotes: daoMembers[msg.sender].availableVotes, 
-                    url: url, 
-                    isValue: true,
-                    dealId: "",
-                    pieceCid: "",
-                    spAddress:address(0),
-                    stored: false,
-                    accepted: false,
-                    yesVotes:0,
-                    noVotes:0
-                }
-            );
-            AmarumRepos[url] = newRepo;
-        }
-    }
-
-    // Stage 2
-    function minerSubmission (string memory url, string memory dealId, string memory pieceCid) public {
-        require(epochStage == 2,"Incorrect stage for minerSubmission");
-        Repo memory targetRepo = AmarumRepos[url];
-        if(targetRepo.isValue){
-            targetRepo.dealId = dealId;
-            targetRepo.pieceCid = pieceCid;
-            targetRepo.stored = true;    
-            targetRepo.spAddress = msg.sender;
-        }
-        AmarumRepos[url] = targetRepo;
-    }
-
-    
+     
 }

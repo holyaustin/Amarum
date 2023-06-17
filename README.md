@@ -83,3 +83,30 @@ stay connected on twitter @holyaustin
 LightHouse API - 1eceb394-fc75-43cf-83b6-546c9c13da57
 
 Huddle01 - eee33ed8308ea7f4814202f6fee8c936c80d2f9f03d480b069f13974fe349e21
+
+Compiled 56 Solidity files successfully
+deploying "DataGovernanceToken" (tx: 0xdc2a6246d3530f8218cec45e08a4938571ebbbe5db381a94db5f6cc579cde0f2)...: deployed at 0x194B6929CcAA99B034F0D559086DA4212d92A6E3 with 86411440 gas
+Checkpoints 1
+Delegated to deployer wallet!
+deploying "TimeLock" (tx: 0x084e8d87db476096db8cddd3d91b9c4eb3c8f80e9fed568a21211735b44ce11e)...: deployed at 0x9eeC18cdE5eA704bc7DE582d08d52CD98A20EB30 with 84047731 gas
+deploying "GovernorContract" (tx: 0xb7c3eaa8d0efa1ee0f894063558fc1455d650e1cc412da3c729530b178b50dd5)...: deployed at 0x19fCe58Ef91a46a68FBfc53DE66Ddd33035D9aFe with 128205910 gas
+Setting roles in TimeLock.sol
+Roles in TimeLock.sol set!
+deploying "DaoDealClient" (tx: 0x0bbb6751021ead537c240ce657630b8d5f073e6047f528e6543e9fe0542e5a1d)...: deployed at 0xd1CDB4878239cbBd1D783502E8BB19646c330D90 with 146974849 gas
+Transferring DaoDealClient Owner to TimeLock.sol
+Ownership transferred
+Done in 556.53s.
+
+
+
+Nothing to compile
+deploying "DataGovernanceToken" (tx: 0xc77ab061aa745e360854c65b7cd16c81899a2aaf11e3e65a3610918c20ea52fc)...: deployed at 0x78F29A7b5A23952dC49E4e865d3B8FE9ACf8255B with 96331480 gas
+Checkpoints 1
+Delegated to deployer wallet!
+deploying "TimeLock" (tx: 0x22336e9bc549323091de94bbcd2ec6ef5836eff16749c5c3a3b8a351c0356ad0)...: deployed at 0xDDFb19892A8D895Df8Fb9828A825dd8a3f67c22D with 86515714 gas
+deploying "GovernorContract" (tx: 0x92518bd0634afcc9bb85e6d9f7fb9a36835ab5e556992cd2adbd1d1d20352358)...: deployed at 0xe9C1a529AAC1f83282448d05314Cc2C86F4695f0 with 157560126 gas
+Setting roles in TimeLock.sol
+Roles in TimeLock.sol set!
+deploying "DaoDealClient" (tx: 0x491e1c8d1d6cde85c87ed65cd8c547cb482d2ae92b33441bc15533b7bf6a56a6)...: deployed at 0x465ec9468303A06045De28C96B931ad336E70fe6 with 148273210 gas
+Transferring DaoDealClient Owner to TimeLock.sol
+Ownership transferred

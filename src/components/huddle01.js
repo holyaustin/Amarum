@@ -1,5 +1,7 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */ 
+//API Key: JHY987sNFc3He07t0wMYgbttwAvUGLbI
+//Project ID: nxBsP5s6U_LYrjjbUtFPueTl9lHo3-91
 
 import React, { useEffect, useState } from "react";
 import { jsx, Box } from 'theme-ui';
@@ -61,13 +63,13 @@ export default function Huddle01() {
 
 
 
-  console.log('Entered Conference component');
+  console.log('Entered Meeting component');
   const router = useRouter();
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleJoin = async () => {
     try {
-      await huddleClient.join("mominter", {
+      await huddleClient.join("Amarum", {
         address: "0xa6D6f4556B022c0C7051d62E071c0ACecE5a1228",
         wallet: "",
         ens: "",
@@ -85,7 +87,7 @@ export default function Huddle01() {
     <Box as="section"  sx={styles.section} className="bg-blue-800 ">
     <>
     <div className=" text-2xl text-center text-white font-bold ">
-        <h1>Video Conference</h1>
+        <h1>Community Meetup</h1>
       </div>
       <div className="grid grid-cols-3 grid-rows-2 col-gap-2 row-gap-5 mx-20 my-5">
 

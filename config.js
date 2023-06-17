@@ -1,3 +1,3 @@
 
-  export const AmarumAddress = "0xc9637cB5e3EbAEE5124Daa92EA4Fee1Bd37B71FD"
+  export const AmarumAddress = "0x49D610B2403A38b9b00200D1dC47ba838C87b395"
   
