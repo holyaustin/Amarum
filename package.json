@@ -26,6 +26,7 @@
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "@openzeppelin/contracts": "^4.5.0",
     "@polybase/client": "^0.6.2",
+    "@pushprotocol/uiembed": "^0.2.0",
     "@spheron/storage": "^1.0.17",
     "@tableland/sdk": "^4.3.2",
     "@tailwindcss/forms": "^0.3.4",

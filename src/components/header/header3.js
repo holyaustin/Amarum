@@ -8,6 +8,7 @@ import Image from '../image';
 import TopBar from '../topbar';
 import LockIcon from '../icons/lock';
 import HamburgerMenu from '../hamburger';
+import Navbar2 from './navbar2';
 
 export default function Header() {
   //  navigate = useRouter();
@@ -55,7 +56,15 @@ export default function Header() {
           className={state.isSticky ? 'is-sticky' : ''}
         >
           <Container sx={styles.container}>
-          <Image src="/images/logoonly.png" loading="lazy" sx={styles.logo} alt="logo" />
+          <Image src="/images/amarumlogo.png" loading="lazy" sx={styles.logo} alt="logo" />
+{/**
+          <Navbar2
+              isSticky={state.isSticky}
+              isMobile={state.isMobileMenu}
+              handleCloseMenu={handleCloseMenu}
+            />
+ */}
+
           <div 
           sx={styles.navbar}
           className={state.isSticky ? 'is-sticky' : ''}
@@ -65,29 +74,26 @@ export default function Header() {
           <a>Home</a>
           </Link>
           <Link href="/explore">
-          <a>News-On-Demand</a>
+          <a>Marketplace</a>
           </Link>
-          <Link href="/publishnews">
-          <a>Publish-News</a>
+          <Link href="/publish">
+          <a>Proposals</a>
           </Link>
-          <Link href="/streamlive">
-          <a>Stream-Live </a>
+          <Link href="/publish">
+          <a>Approve-Datasets</a>
           </Link>
-          <Link href="/videoplayer">
-          <a> Video-Player</a>
+          <Link href="/publish">
+          <a>DAO-Token</a>
           </Link>
-          <Link href="https://web3chat-kezayya.vercel.app/" target="_blank">
-          <a>Chat </a>
+
+          <Link href="/Videoconference">
+          <a>Video-Meeting </a>
           </Link>
-          {/**
-          <Link href="/addfolder">
-          <a>Video Marketplace</a>
+          <Link href="/Profile">
+          <a>Profile</a>
           </Link>
-          <Link href="/analytics">
-          <a>Analytics</a>
-          </Link>
-           */}
-          </div>
+      
+          </div> 
 
             <Flex sx={styles.buttonGroup}>
             <Link href="/">

@@ -59,7 +59,7 @@ const MintFile = () => {
      console.log("NFT.storage");
     try {
       console.log("Trying to upload file to ipfs");
-      setTxStatus("Uploading Video to IPFS via NFT.Storage");
+      setTxStatus("Uploading Article to IPFS");
       console.log("close to metadata");
       const metaData = await nftStorage.store({
         name: name,
@@ -108,7 +108,7 @@ const MintFile = () => {
     console.log("image ipfs path is", imgViewString);
     setImageView(imgViewString);
    setMetaDataURl(getIPFSGatewayURL(metaData.url));
-    //setTxURL(`https://calibration.filfox.info/en/tx/${mintNFTTx.hash}`);
+    setTxURL(`https://calibration.filfox.info/en/tx/${mintNFTTx.hash}`);
     setTxStatus("Dataset submission was successfully!");
     console.log("Dataset submission completed");
   };
