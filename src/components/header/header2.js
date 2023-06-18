@@ -80,7 +80,7 @@ export default function Header() {
           <a>Submit-Dataset</a>
           </Link>
           <Link href="/encrypt">
-          <a>Encrpt-Dataset</a>
+          <a>Encrypt-Dataset</a>
           </Link>
           <Link href="/Videoconference">
           <a>Video-Meeting </a>
