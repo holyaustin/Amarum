@@ -79,6 +79,9 @@ export default function Header() {
           <Link href="/publish">
           <a>Submit-Dataset</a>
           </Link>
+          <Link href="/encrypt">
+          <a>Encrpt-Dataset</a>
+          </Link>
           <Link href="/Videoconference">
           <a>Video-Meeting </a>
           </Link>

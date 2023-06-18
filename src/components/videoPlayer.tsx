@@ -5,31 +5,24 @@ import styles from "../styles/VideoPlayer.module.css"
 import { EmbedSDK } from "@pushprotocol/uiembed";
 
  export default function VideoPlayer() {
-  const [address, setAddress] = useState();
+  const [account, setAccount] = useState();
+  const [haveMetamask, sethaveMetamask] = useState(true);
   // Set the state to get either the playback URL or playback ID
   const [playbackSource, setPlaybackSource] = useState<string>('');
   // Quick verifiation to check if url provided is a playback url
   const playbackurl = '.m3u8';
 
   useEffect(() => {
+    //connectWallet()
 
-    const { ethereum } = window;
-    const checkMetamaskAvailability = async () => {
-      if (!ethereum) {
-        connectWallet();
-      }
-      //sethaveMetamask(true);
-    };
-    checkMetamaskAvailability();
-
-
-    if (address) { // 'your connected wallet address'
+    if (account) { // 'your connected wallet address'
+      console.log("Detected wallet account is", account);
       EmbedSDK.init({
-        headerText: 'Hello DeFi', // optional
+        headerText: 'Amarum DAO Message Notifications', // optional
         targetID: 'sdk-trigger-id', // mandatory
-        appName: 'consumerApp', // mandatory
+        appName: 'amarumDAO', // mandatory
         user: account, // mandatory
-        chainId: 1, // mandatory
+        chainId: 5, // mandatory
         viewOptions: {
             type: 'sidebar', // optional [default: 'sidebar', 'modal']
             showUnreadIndicator: true, // optional
@@ -46,29 +39,12 @@ import { EmbedSDK } from "@pushprotocol/uiembed";
       });
     }
 
-    const connectWallet = async () => {
-      if (!address) {
-        const { ethereum } = window;
-        try {
-          if (!ethereum) {
-            sethaveMetamask(false);
-          }
-          const accounts = await ethereum.request({
-            method: "eth_requestAccounts",
-          });
-          setAddress(accounts[0]);
-          navigate.push('/explore')
-        } catch (error) {
-          console.error(error);
-        }
-      }
-    };
+
   
     return () => {
       EmbedSDK.cleanup();
     };
   }, []);
-
 
   return (
     <Box as="section"  sx={styles2.section}>
@@ -76,8 +52,8 @@ import { EmbedSDK } from "@pushprotocol/uiembed";
       <h1 > Video Player powered by Livepeer Studio</h1>
       <h5 className={styles.h5}>Provide a playback URL or playback Id</h5>
     </div>
-    <div className="flex justify-center bg-blue-100">
-        <div className="w-1/2 flex flex-col pb-12 ">
+    <div className="flex justify-center bg-blue-100 p-10">
+        <div className="w-1/2 flex flex-col pb-12 mr-15 ">
       <input
         className=" border rounded p-4 w-100 mb-4 text-black"
         type='text'
@@ -103,12 +79,12 @@ import { EmbedSDK } from "@pushprotocol/uiembed";
       )}
     </div>
 <div>
-    <div className="bg-blue-100 text-xl text-center text-black font-bold pt-5 pb-4">
+    <div className="bg-blue-100 text-xl text-center text-black font-bold pl-14 pb-4 pt-14">
       
-      <h5 className={styles.h5}>Push Protocol Notification</h5>
+      <h5 className={styles.h5} >Push Protocol Notification</h5>
     </div>
       <div>
-    <button id="sdk-trigger-id" className = "font-bold mt-20 bg-red-700 text-white text-2xl rounded p-4 shadow-lg">Push Trigger button</button>
+    <button id="sdk-trigger-id" className = "align-center font-bold mt-20  bg-red-700 text-white text-2xl rounded p-4 shadow-lg ml-10 pl-10">Push Trigger button</button>
     </div>
   </div>
     </div>

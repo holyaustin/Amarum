@@ -86,8 +86,8 @@ export default function Header() {
           <a>DAO-Token</a>
           </Link>
 
-          <Link href="/Videoconference">
-          <a>Video-Meeting </a>
+          <Link href="/streamlive">
+          <a>LiveStream </a>
           </Link>
           <Link href="/Profile">
           <a>Profile</a>
