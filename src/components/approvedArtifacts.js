@@ -18,7 +18,6 @@ import Popup from 'reactjs-popup';
 import blenderPoster from '../../public/images/amarumnew.png';
 import AmarumNFT from "../../artifacts/contracts/Amarum.sol/AmarumNFT.json";
 import { AmarumAddress } from "../../config";
-console.log("AmarumAddress is :", AmarumAddress)
 
 export default function ViewFiles() {
   const router = useRouter();
@@ -31,8 +30,8 @@ export default function ViewFiles() {
     loadfileNFT();
   }, []);
 
-  //const rpcUrl = "https://filecoin-calibration.chainstacklabs.com/rpc/v1";
-   const rpcUrl = "https://api.calibration.node.glif.io/rpc/v1";
+  const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
+  // const rpcUrl = "https://api.hyperspace.node.glif.io/rpc/v1";
    // const rpcUrl = "localhost";
 
   async function loadfileNFT() {
@@ -44,7 +43,7 @@ export default function ViewFiles() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(AmarumAddress, AmarumNFT.abi, signer);
-    const data = await contract.fetchAllAmarums();
+    const data = await contract.fetchAmarumsApproved();
     /*
     *  map over items returned from smart contract and format
     *  them as well as fetch their token metadata
@@ -61,8 +60,8 @@ export default function ViewFiles() {
         image: getIPFSGatewayURL(meta.data.image),
         name: meta.data.name,
         description: meta.data.description,
-        //sharelink: getIPFSGatewayURL(meta.data.image),
-        category: meta.data.properties.category,
+        sharelink: getIPFSGatewayURL(meta.data.image),
+        author: meta.data.properties.author,
       };
 
       console.log("item returned is ", item);
@@ -92,7 +91,7 @@ export default function ViewFiles() {
     console.log("item id clicked is", nft.tokenId);
     const pid = nft.tokenId;
     router.push({
-        pathname: "/review",
+        pathname: "",
         query: {pid}
       });
       console.log('Prop result is ', { pid } )
@@ -114,19 +113,19 @@ export default function ViewFiles() {
   if (loadingState === "loaded" && !nfts.length) {
     return (
       <div sx={styles.section}>
-        <h1 className="px-20 py-10 text-3xl text-white">Empty space, no DataSet yet</h1>
+        <h1 className="px-20 py-10 text-3xl text-white">Empty space, no approved Dataset yet</h1>
       </div>
     );
   }
   return (
     <Box as="section"  sx={styles.section}>
       <div className="bg-blue-100 text-xl text-center text-black font-bold pt-5 pb-4">
-        <h1> List of Datasets submitted</h1>
+        <h1> Approved Datasets</h1>
       </div>
     <div className="flex justify-center bg-blue-100 mb-12">
 
       <div className="px-4" style={{ maxWidth: "1600px" }}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-2">
           {nfts.map((nft, i) => (
 
             <div key={i} className="shadow rounded-xl overflow-hidden border-2 border-white-500">
@@ -141,19 +140,19 @@ export default function ViewFiles() {
               />
           
               <div className="p-1">
-                <p style={{ height: "85px", overflow: 'hidden' }} className="text-xl text-blue-800 font-semibold leading-none">Name : {nft.name}      </p>
+                <p style={{ height: "85px", overflow: 'hidden' }} className="text-xl text-blue-800 font-semibold leading-none">Title : {nft.name}      </p>
                {/** <p className="text-xl font-bold text-black pt-2">Size : {nft.size}  MB </p>
                  */}
-                <p className="text-xl font-bold text-black pt-2">Category : {nft.category} </p>
+                <p className="text-xl font-bold text-black pt-2">Author : {nft.author} </p>
                 
                 <div style={{ height: '150px', overflow: 'hidden' }}>
-                    <p className="text-gray-700 pt-2">Description : {nft.description} </p>
+                    <p className="text-gray-700 pt-2">Abstract : {nft.description} </p>
                 </div>
                 
               </div>
 
               <div className="p-2 bg-black">
-                <button type="button" className="mt-1 w-full bg-blue-500 text-white font-bold py-2 px-12 rounded" onClick={() => ArticleDetails(nft)}>Vote</button>
+                <button type="button" className="mt-1 w-full bg-blue-500 text-white font-bold py-2 px-12 rounded" onClick={() => ArticleDetails(nft)}>Get Dataset</button>
               </div>
           
             </div>

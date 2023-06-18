@@ -18,6 +18,9 @@ import 'dotenv/config';
 import AmarumNFT from "../../artifacts/contracts/Amarum.sol/AmarumNFT.json";
 import { AmarumAddress } from "../../config";
 const APIKEY = [process.env.NEXT_PUBLIC_NFT_STORAGE_API_KEY];
+const token = [process.env.NEXT_PUBLIC_SPHERON_TOKEN];
+const client = new SpheronClient({ token });
+
 
 const MintFile = () => {
   const navigate = useRouter();

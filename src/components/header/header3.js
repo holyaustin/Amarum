@@ -76,13 +76,18 @@ export default function Header() {
           <Link href="/explore">
           <a>Marketplace</a>
           </Link>
-          <Link href="/publish">
+          {/** 
+          <Link href="/review">
           <a>Proposals</a>
           </Link>
-          <Link href="/publish">
+          */}
+          <Link href="/newdeal">
+          <a>Create-Deals</a>
+          </Link>
+          <Link href="/approved">
           <a>Approve-Datasets</a>
           </Link>
-          <Link href="/publish">
+          <Link href="/Token">
           <a>DAO-Token</a>
           </Link>
 

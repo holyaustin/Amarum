@@ -63,8 +63,7 @@ export default function Watching() {
     alert("This feature is under development because we want to give you the best expereince");
   }
 
-  const rpcUrl = "https://filecoin-hyperspace.chainstacklabs.com/rpc/v1";
-  // const rpcUrl = "https://api.hyperspace.node.glif.io/rpc/v1";
+  const rpcUrl = "https://filecoin-calibration.chainstacklabs.com/rpc/v1";
    // const rpcUrl = "localhost";
 
    const { query: pid } = router; 
@@ -73,7 +72,7 @@ export default function Watching() {
 
   async function loadPaper() {
     /* create a generic provider and query for items */
-    console.log("loading Article for item", props.pid);
+    console.log("loading dataset for item", props.pid);
     const pid = props.pid;
     console.log("pid is ", pid);
 
@@ -85,7 +84,7 @@ export default function Watching() {
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
     const contract = new ethers.Contract(AmarumAddress, AmarumNFT.abi, signer);
-    const data = await contract.fetchOneArtifact(pid);
+    const data = await contract.fetchOneAmarum(pid);
     const data2 = await contract.fetchItemViews(pid);
 
     /*
@@ -229,7 +228,7 @@ export default function Watching() {
     <br/>
 
       <div className="p-1">
-        <p style={{ height: "20px" }} className="text-3xl font-semibold underline">Article Details</p>
+        <p style={{ height: "20px" }} className="text-3xl font-semibold underline">Dataset Details</p>
       </div>
       <br/>
       <div className="p-1">

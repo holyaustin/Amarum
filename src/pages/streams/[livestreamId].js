@@ -14,7 +14,7 @@ export async function getServerSideProps( { params } ) {
   const res = await fetch(`https://livepeer.studio/api/stream/${params.livestreamId}`, {
     method: 'GET',
     headers: {
-      Authorization: `Bearer ${process.env.API_KEY}`,
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
       'Content-Type': 'application/json',
     },
   });

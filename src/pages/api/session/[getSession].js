@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     const response = await fetch(`https://livepeer.studio/api/session/${req.query.getSession}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${process.env.API_KEY}`,
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_KEY}`,
         'Content-Type': 'application/json',
       },
     });

@@ -142,77 +142,19 @@ const MintFile = () => {
   return (
     <Box as="section"  sx={styles.section}>
       <div className="bg-pink-100 text-xl text-center text-black font-bold pt-10 pb-1">
-        <h1> Submit your Video Dataset</h1>
-        <h4 className="text-pink-100"> if your dataset is aproved, the DAO will reward you with $50</h4>
+        <h1> Mint DAO Token for Governance</h1>
+        <h4 className="text-pink-100"> Minimum of 100 Needed to be minted</h4>
       </div>
       <div className="flex justify-center bg-pink-100">
         <div className="w-1/2 flex flex-col pb-12 ">
         <input
-            placeholder="Name of Video DataSet"
+            placeholder="Enter number of token you want to mint"
             className="mt-3 border rounded p-2 text-xl"
             onChange={(e) => updateFormInput({ ...formInput, name: e.target.value })}
           />
-          <textarea
-            placeholder="Description of dataset"
-            rows="4"
-            className="mt-3 border rounded p-2 text-xl"
-            onChange={(e) => updateFormInput({ ...formInput, description: e.target.value })}
-          />
-          <select
-            className="bg-white mt-3 border rounded p-2 text-xl"
-            placeholder="Choose Dataset area"
-            onChange={(e) => updateFormInput({ ...formInput, category: e.target.value })}
-          ><option value="sports">Sports</option>
-            <option value="Human Action">Human Action</option>
-            <option value="Emotional Recognition">Emotional Recognition</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Epic Kitchens">Epic Kitchen</option>
-            <option value="Animation">Animation</option>
-            <option value="Medicine">Medicine</option>
-            <option value="Other Category">Other Category</option>
-          </select>
-          <input
-            placeholder="Total number of data"
-            className="mt-3 border rounded p-2 text-xl"
-            onChange={(e) => updateFormInput({ ...formInput, total: e.target.value })}
-          />
-
-          <br />
-          <div className="MintNFT text-black text-xl">
-            <form>
-              <h3>Upload your sample video</h3>
-              <input type="file" onChange={handleFileUpload} className="text-black mt-2 border rounded  text-xl" />
-              <br /><br />
-              <h3>Upload your Zipped dataset</h3>
-              <input type="file" onChange={handleFileUpload2} className="text-black mt-2 border rounded  text-xl" />
-            </form>
-            <br /><br />
-            {txStatus && <p className="text-blue">{txStatus}</p>}
-            
-            {metaDataURL && <p className="text-blue"><a href={metaDataURL} className="text-blue">Metadata on IPFS</a></p>}
-            
-            {txURL && <p><a href={txURL} className="text-blue">See the mint transaction</a></p>}
-           
-            {errorMessage}
-
-            
-            {imageView && (
-            <iframe
-              className="mb-10"
-              title="File"
-              src={imageView}
-              alt="File preview"
-              frameBorder="0"
-              scrolling="auto"
-              height="50%"
-              width="100%"
-            />
-            )}
-
-          </div>
 
           <button type="button" onClick={(e) => mintNFTFile(e, uploadedFile, uploadedFile2)} className="font-bold mt-20 bg-red-700 text-white text-2xl rounded p-4 shadow-lg">
-            Submit Videos
+            Mint DAO Token
           </button>
         </div>
       </div>
