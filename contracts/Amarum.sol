@@ -62,7 +62,7 @@ contract AmarumNFT is ERC721URIStorage {
         require(msg.sender == admin, "Only admin can create");
         _;
     }
-
+      // constructor 
     constructor() ERC721("Video-Dataset", "VDS") {
       owner = payable(msg.sender);
       admin = msg.sender;

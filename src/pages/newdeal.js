@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import Layout from '../components/layout3';
 import CreateDeal from '../components/createdeal';
 
+// Page for new storage deals More work to be done here
 export default function NewDeal() {
   return (
     <ThemeProvider theme={theme}>
